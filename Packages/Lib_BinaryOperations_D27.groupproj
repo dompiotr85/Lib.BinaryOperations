@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{14666EC5-E5D2-4384-A1A3-9B9C58C63786}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="D27\Lib_BinaryOperations.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Lib_BinaryOperations">
+        <MSBuild Projects="D27\Lib_BinaryOperations.dproj"/>
+    </Target>
+    <Target Name="Lib_BinaryOperations:Clean">
+        <MSBuild Projects="D27\Lib_BinaryOperations.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Lib_BinaryOperations:Make">
+        <MSBuild Projects="D27\Lib_BinaryOperations.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Lib_BinaryOperations"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Lib_BinaryOperations:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Lib_BinaryOperations:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,6 @@
+Lib.BinaryOperations package directory; version-specific packages are located in
+the respective subdirectories.
+
+Files located in Lib.BinaryOperations/Packages:
+
+Lib_BinaryOperations_Dxy.groupproj:  Project group file for Delphi version x.y packages
