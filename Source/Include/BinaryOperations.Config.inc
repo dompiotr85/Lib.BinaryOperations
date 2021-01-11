@@ -13,13 +13,27 @@
 
 {$IFDEF SUPPORTS_LEGACYIFEND}{$LEGACYIFEND ON}{$ENDIF}
 
-{ BO_UseLookupTable ------------------------------------------------------------
+{$UNDEF BO_PurePascal}
+{$UNDEF BO_UseLookupTable}
+{$UNDEF BO_AllowASMExtensions}
+
+{-- Remove dot ('.') to enable specific feature in Lib.BinaryOperations -------}
+
+{ BO_PurePascal
+
+  If you want to compile this unit without ASM, don't want to or can't define
+  PurePascal for the entire project and at the same time you don't want to or
+  can't make changes to this unit, define this symbol for the entire project
+  and this unit will be compiled in PurePascal mode. }
+{.$DEFINE BO_PurePascal}
+
+{ BO_UseLookupTable
 
   When defined, PopCount functions will, in their PurePascal version, use lookup
   table instead of testing each bit in a passed value. }
 {$DEFINE BO_UseLookupTable}
 
-{ BO_AllowASMExtensions --------------------------------------------------------
+{ BO_AllowASMExtensions
 
   Allows use of x86(-64) instruction extensions in ASM.
   When defined, availability of each extension is tested at unit initialization.
@@ -40,5 +54,5 @@
       (ins) = ins is a specific used instruction from the extension set }
 {$DEFINE BO_AllowASMExtensions}
 
-{$ENDIF ~BO_CONFIG_INC}
+{$ENDIF !BO_CONFIG_INC}
 

@@ -13,8 +13,14 @@ unit BinaryOperations.Consts;
 interface
 
 resourcestring
-  SBitStrToNumber_UnknownCharacterInBitstring =
-    'BitStrToNumber: Unknown character (#%d) in bitstring.';
+  SBitStrToNumber_UnknownCharacterInBitstring = 'BitStrToNumber: Unknown character (#%d) in bitstring.';
+  SDataToHexStr_InvalidStringLength = 'DataToHexStr: Invalid string length (%d).';
+  SHexStrToData_BufferTooSmall = 'HexStrToData: Buffer too small.';
+  SHexStrToData_InvalidCharacter = 'HexStrToData: Invalid character (#%d).';
+  SCompareData_MismatchInDataSize = 'CompareData: Mismatch in data sizes (%d, %d).';
+  SBitOpsFunctionIsAsm_UnknownFunction = 'BitOpsFunctionIsAsm: Unknown function %d.';
+  SBitOpsFunctionPas_UnknownFunction = 'BitOpsFunctionPas: Unknown function %d.';
+  BitOpsFunctionAsm_UnknownFunction = 'BitOpsFunctionAsm: Unknown function %d.';
 
 implementation
 
